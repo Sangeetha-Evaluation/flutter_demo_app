@@ -14,9 +14,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = const [
-    NewsListScreen(),
-    SearchScreen(),
+  final GlobalKey<NewsListScreenState> _newsListKey = GlobalKey<NewsListScreenState>();
+
+   late final List<Widget> _screens = [
+    NewsListScreen(key: _newsListKey),
+    const SearchScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -40,7 +42,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_bottomNavItems[_selectedIndex].label!),
+        title: Text(
+          _selectedIndex == 0 ? AppStrings.newsListTitle : AppStrings.searchNews,
+        ),
+        //add sort filter button here
+        actions: _selectedIndex == 0
+            ? [
+                IconButton(
+                  icon: const Icon(Icons.filter_list),
+                  onPressed: () {
+                    _newsListKey.currentState?.showSortOptions();
+                  },
+                ),
+              ]
+            : null,
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

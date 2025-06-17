@@ -12,4 +12,7 @@ class AppStrings {
   static const String loading = 'Loading...';
   static const String cannotOpenURL = 'Cannot open URL';
   static const String recentSearches = 'Recet Searches';
+  static const String sortBy = 'Sort By';
+  static const String sortByLatest = 'Latest';
+  static const String sortByOldest = 'Oldest';
 }
