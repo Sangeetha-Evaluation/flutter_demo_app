@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../model/article.dart';
 import '../../utilities/app_constants.dart';
 import '../../utilities/app_strings.dart';
-import '../../view_model/news_view_model.dart';
 import '../../widgets/news_grid_view.dart';
 import '../../widgets/custom_loader.dart';
 import '../../widgets/custom_search_text_field.dart';
 import '../../widgets/search_history.dart';
+import '../../view_model/search_view_model.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -65,7 +65,7 @@ class _SearchScreenState extends State<SearchScreen> {
     setState(() {
       _loading = true;
     });
-    _results = await NewsViewModel().searchArticles(query);
+    _results = await SearchViewModel().searchArticles(query);
     setState(() {
       _loading = false;
       _showRecent = false;
@@ -73,7 +73,7 @@ class _SearchScreenState extends State<SearchScreen> {
     await SearchHistory.addSearch(query);
     _loadRecentSearches();
 
-    _results = await NewsViewModel().searchArticles(query);
+    _results = await SearchViewModel().searchArticles(query);
     setState(() {
       _loading = false;
     });

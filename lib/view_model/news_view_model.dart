@@ -40,11 +40,6 @@ class NewsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-
-  Future<List<Article>> searchArticles(String query) async {
-    return await _service.searchArticles(query);
-  }
-
   Future<void> refreshArticles() async {
      await fetchArticles(isRefresh: true);
   }
