@@ -45,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           _selectedIndex == 0 ? AppStrings.newsListTitle : AppStrings.searchNews,
         ),
-        //add sort filter button here
         actions: _selectedIndex == 0
             ? [
                 IconButton(
