@@ -6,9 +6,10 @@ class AppStrings {
   static const String details = 'Details';
   static const String readFullArticle = 'Read Full Article';
   static const String opening = 'Opening:';
-  static const String searchNews = 'Search News';
+  static const String searchNews = 'Search';
   static const String searchPlaceholder = 'Search for news...';
   static const String noResultsFound = 'No results found';
   static const String loading = 'Loading...';
   static const String cannotOpenURL = 'Cannot open URL';
+  static const String recentSearches = 'Recet Searches';
 }

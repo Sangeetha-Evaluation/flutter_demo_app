@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../extensions/date_formatter_extension.dart';
 import '../../view_model/news_view_model.dart';
-import '../../utilities/app_strings.dart';
 import '../../utilities/app_constants.dart';
 import '../../utilities/app_navigator.dart';
 
@@ -42,14 +41,7 @@ class _NewsListScreenState extends State<NewsListScreen>  {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppStrings.newsListTitle),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () => AppNavigator.navigateToSearchScreen(context),
-          ),
-        ],
-      ),
+      appBar: null,
       body: Consumer<NewsViewModel> (
         builder: (context, viewModel, child) {
           final articles = viewModel.articles;

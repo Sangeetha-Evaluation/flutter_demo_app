@@ -89,7 +89,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+     appBar: null,
       body: Padding(
         padding: const EdgeInsets.all(AppConstants.defaultPadding),
         child: Column(
@@ -104,7 +104,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 children: [
                   const SizedBox(height: AppConstants.elementSpacing),
                   Text(
-                    "Recent Searches",
+                    AppStrings.recentSearches,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: 8),

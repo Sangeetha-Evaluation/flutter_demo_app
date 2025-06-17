@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/view/news_list_screen.dart';
 import 'package:provider/provider.dart';
 import 'view_model/news_view_model.dart';
+import 'screens/view/home_screen.dart';
 
 void main() {
   runApp(
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Space News',
       theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.deepPurple),
-      home: const NewsListScreen(),
+      home: const HomeScreen(),
     );
   }
 }
